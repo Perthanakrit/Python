@@ -1,0 +1,11 @@
+audience,Gender,Age,Name,Score,Genre,Studio
+A,Male,17,"Spy x Family, Horimiya",9.09,"['Action', 'Comedy']","['Wit Studio', 'CloverWorks']"
+B,Male,16,Violet Evergarden Movie,8.95,"['Drama', 'Fantasy', 'Slice of Life']",['Kyoto Animation']
+C,Female,16,Fruits Basket: The Final,9.04,"['Drama', 'Romance', 'Slice of Life', 'Supernatural']",['TMS Entertainment']
+D,Male,15,Mahoutsukai no Yome: Hoshi Matsu Hito,8.12,"['Fantasy', 'Slice of Life']",['Wit Studio']
+E,Female,17,Gintama,9.08,"['Action', 'Comedy', 'Sci-Fi']",Bandai Namco Pictures']
+F,Female,17,Jujutsu Kaisen (TV),8.69,['MAPPA'],"['Action', 'Fantasy']"
+G,Female,18,Shingeki no Kyojin Season 3 Part 2,9.08,"['Action', 'Drama']",['Wit Studio']
+H,Male,16,Black Lagoon: The Second Barrage,8.18,['Action'],['Madhouse']
+I,Female,18,Haikyuu!!: Karasuno Koukou vs. Shiratorizawa Gakuen Koukou,8.79,['Sports'],['Production I.G']
+J,Male,17,Made in Abyss,8.68,"['Adventure', 'Drama', 'Fantasy', 'Mystery', 'Sci-Fi']",['Kinema Citrus']
