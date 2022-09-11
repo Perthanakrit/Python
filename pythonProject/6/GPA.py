@@ -1,0 +1,13 @@
+thai=float(input("scoreT :"))
+math=float(input("scoreM :"))
+english=float(input("scoreE :"))
+science=float(input("scoreS :"))
+sport=float(input("scoreSp :"))
+print("Thai = ",thai)
+print("Math = ",math)
+print("English = ",english)
+print("Science = ",science)
+print("Sport = ",sport)
+
+GPA= float((thai+math+english+science+sport)/5)
+print("GPA = ",GPA)

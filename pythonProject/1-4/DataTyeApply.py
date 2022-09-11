@@ -1,0 +1,7 @@
+print("Super Shop")
+print("-----------------------")
+print("Coconut X",2,20,"THB",2*20)
+print("TARO X",5,10,"THB",5*10)
+print("-----------------------")
+print("Total",(2*20)+(5*10),"THB")
+print("Thank you so much")
