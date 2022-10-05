@@ -1,7 +1,6 @@
 import pygame
 import time
 import random
-from menu import *
 from Character import *
 
 pygame.init()
@@ -32,8 +31,7 @@ class Game():
         self.snake, self.snake2 = SNAKE_1(self.xsnake_1, self.ysnake_1), SNAKE_2(self.xsnake_2, self.ysnake_2)
 
     def game_loop(self):
-        while True:
-        #while self.playing:
+        while self.playing:
             self.check_events()
             # self.draw_text('Thanks', 20, self.window_w / 2, self.window_h / 2)
             self.window.blit(self.bg, (0, 0))

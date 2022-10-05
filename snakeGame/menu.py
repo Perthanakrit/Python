@@ -55,7 +55,7 @@ class MainMenu(Menu):
             elif self.state == 'Options':
                 self.cursor_rect.midtop = (self.start_x + self.offset, self.start_y)
                 self.state = 'Start'
-        print(self.state)
+        #print(self.state)
 
 
     def check_input(self):
@@ -64,6 +64,7 @@ class MainMenu(Menu):
             if self.state == 'Start':
                 self.run_startMenu = True
                 self.run_Options = False
+                self.run_display = False
             elif self.state == 'Options':
                 self.run_Options = True
                 self.run_startMenu = False

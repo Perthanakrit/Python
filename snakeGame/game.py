@@ -8,17 +8,17 @@ pygame.font.init()
 #window
 window_x, window_y = 720, 720
 screenWIN = pygame.display.set_mode((window_x, window_y))
-pygame.display.set_caption("Snake Game")
-icon = pygame.image.load('Snake.jpg')
+pygame.display.set_caption("เกมงูที่ไม่ใช่งู")
+icon = pygame.image.load('snakeGame\images\Snake.jpg')
 pygame.display.set_icon(icon)
-bg = pygame.image.load('background_N.jpg')
+bg = pygame.image.load('snakeGame\images\ฺBackground_N.jpg')
 bg = pygame.transform.scale(bg, (720, 720))
 
 black = (0, 0, 0)
 blue = (0, 0, 255)
 
 #snake1
-snake_body_1 = pygame.image.load('snake_1.png')
+snake_body_1 = pygame.image.load('snakeGame\images\snake_1.png')
 direction = 'RIGHT'
 last_rotation = direction
 angle = -90
@@ -30,7 +30,7 @@ speed = 2
 delta_x, delta_y = speed, 0
 score_1 = 0
 #snake2
-snake_body_2 = pygame.image.load('snake_2.png')
+snake_body_2 = pygame.image.load('snakeGame\images\snake_2.png')
 direction2 = 'UP'
 last_rotation2 = direction2
 angle2 = 0
@@ -42,7 +42,7 @@ speed2 = 2
 delta_x_2, delta_y_2 = 0, -speed2
 score_2 = 0
 #Food
-apple = pygame.image.load('apple.png')
+apple = pygame.image.load('snakeGame\images\Apple.png')
 apple = pygame.transform.scale(apple, (25, 25))
 food_spawn = True
 food_x, food_y = random.randint(1, window_x-60), random.randint(1, window_y-60)
