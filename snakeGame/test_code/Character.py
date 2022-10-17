@@ -16,6 +16,8 @@ class SNAKE_1:
         self.alive = True
         self.recent = self.direction
 
+        self.score =0;
+
     def draw(self):
         if self.recent == 'left':
             if self.direction == 'up':

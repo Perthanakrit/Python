@@ -10,7 +10,7 @@ app.geometry('720x500')
 
 def recommendation_anime(event):
     global app
-    data = pd.read_csv('Dataproject\mal_top2000_anime.csv')
+    data = pd.read_csv('mal_top2000_anime.csv')
 
     def loop(para_list):
         gen, anime_name = [], []

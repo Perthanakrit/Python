@@ -1,19 +1,27 @@
+from tkinter.tix import Tree
 import pygame, sys
 from buttonMenu import Button
-from class_game import Game
+from class_game import Game 
 
 pygame.init()
 
 SCREEN = pygame.display.set_mode((1280, 720))
 pygame.display.set_caption("Menu")
 
+centerX = 550;
+
 BG = pygame.image.load("assets/Background.png")
+
+#
+g = Game()
+
+runMenu = True
 
 def get_font(size): # Returns Press-Start-2P in the desired size
     return pygame.font.Font("assets/font.ttf", size)
 
 def play():
-    '''while True:
+    '''while True:Traceback (most recent call last):
         PLAY_MOUSE_POS = pygame.mouse.get_pos()
 
         SCREEN.fill("black")
@@ -37,11 +45,14 @@ def play():
                     main_menu()
 
         pygame.display.update()'''
-    Game.game_loop()
+    playingGame = True
+    g.game_loop(playingGame)
         
     
 def options():
-    while True:
+    optionRun = True
+    backTomenu = True
+    while optionRun:
         OPTIONS_MOUSE_POS = pygame.mouse.get_pos()
 
         SCREEN.fill("white")
@@ -62,24 +73,25 @@ def options():
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if OPTIONS_BACK.checkForInput(OPTIONS_MOUSE_POS):
-                    main_menu()
+                    optionRun = False
+                    main_menu(backTomenu)
 
         pygame.display.update()
 
-def main_menu():
-    while True:
+def main_menu(running):
+    while running:
         SCREEN.blit(BG, (0, 0))
 
         MENU_MOUSE_POS = pygame.mouse.get_pos()
 
         MENU_TEXT = get_font(100).render("MAIN MENU", True, "#b68f40")
-        MENU_RECT = MENU_TEXT.get_rect(center=(640, 100))
+        MENU_RECT = MENU_TEXT.get_rect(center=(centerX, 100))
 
-        PLAY_BUTTON = Button(image=pygame.image.load("assets/Play Rect.png"), pos=(640, 250), 
+        PLAY_BUTTON = Button(image=pygame.image.load("assets/Play Rect.png"), pos=(centerX, 250), 
                             text_input="PLAY", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
-        OPTIONS_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(640, 400), 
+        OPTIONS_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(centerX, 400), 
                             text_input="OPTIONS", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
-        QUIT_BUTTON = Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(640, 550), 
+        QUIT_BUTTON = Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(centerX, 550), 
                             text_input="QUIT", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
 
         SCREEN.blit(MENU_TEXT, MENU_RECT)
@@ -97,13 +109,17 @@ def main_menu():
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    #running = False
                     play()
+                    
                 if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    #running = False
                     options()
+                    
                 if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
                     pygame.quit()
                     sys.exit()
 
         pygame.display.update()
 
-main_menu()
+main_menu(runMenu)
