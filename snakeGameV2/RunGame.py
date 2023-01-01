@@ -10,8 +10,10 @@ menu = MainMenu()
 
 #SCREEN = pygame.display.set_mode((1280, 720))
 #BG = pygame.image.load("assets/Background.png")
-pygame.display.set_caption("Menu")
+pygame.display.set_caption("GameName")
 #SCREEN.blit(BG, (0, 0))
 menu.runMenu()
+
+
 
  

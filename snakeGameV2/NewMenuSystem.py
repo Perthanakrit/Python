@@ -11,28 +11,33 @@ class MainMenu():
     def __init__(self):
         self.runningmenu, self.optionRun = True, True
         self.SCREEN = pygame.display.set_mode((1280, 720))
-        self.BG = pygame.image.load("assets/Background.png")
+        self.BG = pygame.image.load("_assets\images\BgMenu.jpg")
+        DEFAULT_IMAGE_SIZE = (1280, 720)
+        self.fontsize = 50
+# Scale the image to your needed size
+        
         #display menu
+        self.image = pygame.transform.scale(self.BG, DEFAULT_IMAGE_SIZE)
         self.centerX = 550
         self.MENU_MOUSE_POS = pygame.mouse.get_pos()
         self.g = Game()
         #Opition
-        self.playButton = Button(image=pygame.image.load("assets/Play Rect.png"), pos=(self.centerX, 250), 
-                            text_input="PLAY", font=self.get_font(75), base_color="#d7fcd4", hovering_color="White")
-        self.optionButton =  Button(image=pygame.image.load("assets/Options Rect.png"), pos=(self.centerX, 400), 
-                                text_input="OPTIONS", font=self.get_font(75), base_color="#d7fcd4", hovering_color="White")
-        self.quitButton =  Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(self.centerX, 550), 
-                                text_input="QUIT", font=self.get_font(75), base_color="#d7fcd4", hovering_color="White")
+        self.playButton = Button(image=pygame.image.load("_assets/Play Rect.png"), pos=(self.centerX - 200, 250), 
+                            text_input="PLAY", font=self.get_font(self.fontsize), base_color="#d7fcd4", hovering_color="White")
+        self.optionButton =  Button(image=pygame.image.load("_assets/Options Rect.png"), pos=(self.centerX - 200, 400), 
+                                text_input="OPTIONS", font=self.get_font(self.fontsize), base_color="#d7fcd4", hovering_color="White")
+        self.quitButton =  Button(image=pygame.image.load("_assets/Quit Rect.png"), pos=(self.centerX -200, 550), 
+                                text_input="QUIT", font=self.get_font(self.fontsize), base_color="#d7fcd4", hovering_color="White")
 
     def get_font(self, size): # Returns Press-Start-2P in the desired size
-        return pygame.font.Font("assets/font.ttf", size)
+        return pygame.font.Font("_assets/font.ttf", size)
     
     def play(self):
-        self.g.game_loop()
-    
+        self.g.game_loop(True)
+        self.runMenu = False
     def options(self):
         
-        backTomenu = True
+        #backTomenu = True
         while self.optionRun:
             OPTIONS_MOUSE_POS = pygame.mouse.get_pos()
 
@@ -61,7 +66,7 @@ class MainMenu():
 
     def runMenu(self):
         while self.runningmenu:
-            self.SCREEN.blit(self.BG, (0, 0))
+            self.SCREEN.blit(self.image, (0, 0))
 
             MENU_MOUSE_POS = pygame.mouse.get_pos()
             MENU_TEXT = self.get_font(100).render("MAIN MENU", True, "#b68f40")
@@ -92,7 +97,6 @@ class MainMenu():
                     sys.exit()
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
-                        #running = False
                         self.play()
                         
                     if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):

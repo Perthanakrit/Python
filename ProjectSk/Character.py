@@ -5,7 +5,7 @@ pygame.font.init()
 
 class SNAKE_1:
     def __init__(self, x, y):
-        self.snake_body_1 = pygame.image.load('_assets\images\snake_1.png')
+        self.snake_body_1 = pygame.image.load('assets\images\snake_1.png')
         self.snake_body_1 = pygame.transform.rotate(pygame.transform.scale(self.snake_body_1, (40, 40)), -90)
         self.snake_1_rect = self.snake_body_1.get_rect()
         self.snake_1_rect.center = (self.snake_body_1.get_width() / 2, self.snake_body_1.get_height() / 2)
@@ -60,7 +60,7 @@ class SNAKE_1:
 
 class SNAKE_2:
     def __init__(self, x, y):
-        self.snake_body_2 = pygame.image.load('_assets\images\snake_2.png')
+        self.snake_body_2 = pygame.image.load('assets\images\snake_2.png')
         self.snake_body_2 = pygame.transform.rotate(pygame.transform.scale(self.snake_body_2, (40, 40)), -90)
         self.snake_2_rect = self.snake_body_2.get_rect()
         self.snake_2_rect.center = (self.snake_body_2.get_width() / 2, self.snake_body_2.get_height() / 2)
